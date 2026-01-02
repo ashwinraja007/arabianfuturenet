@@ -5,8 +5,8 @@ import { useState, useEffect } from "react";
 export const Header = () => {
   const location = useLocation();
   const navigate = useNavigate();
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false);
-  const [scrolled, setScrolled] = useState<boolean>(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -29,11 +29,11 @@ export const Header = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 w-full z-50 transition-all duration-300 ${
-        scrolled
-          ? "bg-white py-2 shadow-md backdrop-blur-sm"
-          : "bg-white/95 py-3"
-      }`}
+      className={`fixed top-0 left-0 right-0 w-full z-[999]
+        bg-white border-b border-gray-100
+        transition-all duration-300
+        ${scrolled ? "py-2 shadow-[0_2px_12px_rgba(0,0,0,0.06)]" : "py-3"}
+      `}
     >
       <div className="container mx-auto px-4">
         <a href="#main" className="sr-only focus:not-sr-only">
@@ -48,19 +48,19 @@ export const Header = () => {
               src="/futurenet-logo.png"
               alt="Arabian Future Net Logo"
               onClick={handleLogoClick}
-              className={`cursor-pointer transition-all duration-300 object-contain ${
+              className={`cursor-pointer object-contain transition-all duration-300 ${
                 scrolled ? "h-10" : "h-14"
               }`}
             />
 
-            {/* Separator (Desktop only) */}
+            {/* Divider */}
             <div className="hidden md:block h-8 w-px bg-gray-200" />
 
-            {/* 1Global Logo (Desktop only) */}
+            {/* 1Global Logo */}
             <img
               src="/1GlobalEnterprises.png"
               alt="1 Global Enterprises Logo"
-              className={`hidden md:block transition-all duration-300 object-contain ${
+              className={`hidden md:block object-contain transition-all duration-300 ${
                 scrolled ? "h-7" : "h-9"
               }`}
             />
@@ -74,11 +74,7 @@ export const Header = () => {
             aria-controls="mobile-nav"
             aria-label="Toggle navigation"
           >
-            {isMobileMenuOpen ? (
-              <X className="h-6 w-6" />
-            ) : (
-              <Menu className="h-6 w-6" />
-            )}
+            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
 
           {/* Desktop Navigation */}
@@ -93,7 +89,7 @@ export const Header = () => {
               <button
                 key={path}
                 onClick={() => handleNavClick(path)}
-                className={`font-medium transition-colors py-1 ${
+                className={`font-medium transition-colors ${
                   location.pathname === path ||
                   (match && location.pathname.includes(match))
                     ? "text-brand-green"
@@ -116,12 +112,11 @@ export const Header = () => {
         {/* Mobile Navigation */}
         <div
           id="mobile-nav"
-          className={`${
+          className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
             isMobileMenuOpen
               ? "max-h-screen opacity-100 py-4"
               : "max-h-0 opacity-0"
-          } md:hidden overflow-hidden transition-all duration-300 ease-in-out`}
-          role="region"
+          }`}
           aria-hidden={!isMobileMenuOpen}
         >
           <nav className="flex flex-col gap-4 border-t mt-4 border-gray-100">
