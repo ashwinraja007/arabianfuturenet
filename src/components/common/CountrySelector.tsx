@@ -1,5 +1,5 @@
-import React, { useState, useRef, useEffect } from 'react';
-import { ChevronDown, Globe } from 'lucide-react';
+import React, { useState, useRef, useEffect } from "react";
+import { ChevronDown, Globe } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -8,8 +8,8 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { motion } from 'framer-motion';
-import { useLocation } from 'react-router-dom';
+import { motion } from "framer-motion";
+import { useLocation } from "react-router-dom";
 
 interface CountryData {
   country: string;
@@ -36,7 +36,7 @@ const countries: CountryData[] = [
   { country: "SAUDI ARABIA", company: "AMASS", website: "https://amassmiddleeast.com/", priority: 12, flag: "/sa.svg", slug: "saudi-arabia" },
   { country: "UAE", company: "AMASS", website: "https://amassmiddleeast.com/", priority: 13, flag: "/ae.svg", slug: "uae" },
   { country: "USA", company: "GGL", website: "https://gglusa.us/", priority: 14, flag: "/us.svg", slug: "usa" },
-  { country: "UK", company: "Moltech", website: "https://moltech.uk/", priority: 15, flag: "/gb.svg", slug: "uk" }
+  { country: "UK", company: "Moltech", website: "https://moltech.uk/", priority: 15, flag: "/gb.svg", slug: "uk" },
 ];
 
 const CountrySelector = () => {
@@ -47,10 +47,10 @@ const CountrySelector = () => {
   const pathname = location.pathname;
   const slug = pathname.split("/")[1]?.toLowerCase() || "";
 
-  // Find the country by slug, fallback to Singapore
+  // 🔁 UAE is now the default fallback (instead of Singapore)
   const displayCountry =
     countries.find((c) => c.slug?.toLowerCase() === slug) ||
-    countries.find((c) => c.country === "SINGAPORE");
+    countries.find((c) => c.country === "UAE");
 
   const availableCountries = countries.filter((country) => {
     const current = displayCountry?.country.toUpperCase();
@@ -58,24 +58,26 @@ const CountrySelector = () => {
     return country.country !== current;
   });
 
-  const sortedCountries = [...availableCountries].sort((a, b) => a.priority - b.priority);
+  const sortedCountries = [...availableCountries].sort(
+    (a, b) => a.priority - b.priority
+  );
 
   const handleCountrySelect = (country: CountryData) => {
     const currentPath = location.pathname;
     let targetRoute = country.route;
 
-    if (currentPath.includes('/about-us')) {
-      const prefix = country.slug === "" ? '' : `/${country.slug}`;
+    if (currentPath.includes("/about-us")) {
+      const prefix = country.slug === "" ? "" : `/${country.slug}`;
       targetRoute = `${prefix}/about-us`;
-    } else if (currentPath.includes('/contact')) {
-      const prefix = country.slug === "" ? '' : `/${country.slug}`;
+    } else if (currentPath.includes("/contact")) {
+      const prefix = country.slug === "" ? "" : `/${country.slug}`;
       targetRoute = `${prefix}/contact`;
     }
 
     if (targetRoute) {
       window.location.href = targetRoute;
     } else {
-      window.open(country.website, '_blank', 'noopener,noreferrer');
+      window.open(country.website, "_blank", "noopener,noreferrer");
     }
 
     setIsOpen(false);
@@ -83,20 +85,22 @@ const CountrySelector = () => {
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target as Node)
+      ) {
         setIsOpen(false);
       }
     };
 
-    document.addEventListener('mousedown', handleClickOutside);
+    document.addEventListener("mousedown", handleClickOutside);
     return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
 
   return (
     <div ref={dropdownRef} className="relative z-50 flex items-center gap-2">
-      {/* Show current flag */}
       {displayCountry?.flag && (
         <img
           src={displayCountry.flag}
@@ -114,14 +118,15 @@ const CountrySelector = () => {
           >
             <Globe className="w-6 h-6 text-white" />
             <span className="flex items-center gap-1">
-              Switch Country <ChevronDown className="h-3 w-3 ml-1 text-white" />
+              Switch Country
+              <ChevronDown className="h-3 w-3 ml-1 text-white" />
             </span>
           </Button>
         </DropdownMenuTrigger>
 
         <DropdownMenuContent
           align="center"
-          className="w-[280px] max-h-screen h-[90vh] border border-amber-100 bg-white p-2 rounded-lg shadow-lg overflow-y-auto"
+          className="w-[280px] h-[90vh] border border-amber-100 bg-white p-2 rounded-lg shadow-lg overflow-y-auto"
         >
           <ScrollArea className="h-full w-full pr-2 custom-scrollbar">
             <div className="grid grid-cols-1 gap-1 p-1">
@@ -152,8 +157,12 @@ const CountrySelector = () => {
                       )}
                     </div>
                     <div className="ml-3 flex-1">
-                      <div className="font-medium text-sm">{country.country}</div>
-                      <div className="text-xs text-gray-500">{country.company}</div>
+                      <div className="font-medium text-sm">
+                        {country.country}
+                      </div>
+                      <div className="text-xs text-gray-500">
+                        {country.company}
+                      </div>
                     </div>
                   </motion.div>
                 </DropdownMenuItem>
