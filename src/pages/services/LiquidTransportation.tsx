@@ -131,12 +131,12 @@ const LiquidTransportation: React.FC<LiquidTransportationProps> = ({
             duration: 0.5
           }} viewport={{
             once: true
-          }} className="bg-gradient-to-r from-brand-navy to-blue-700 rounded-xl text-white p-8 text-center">
+          }} className="bg-gradient-to-r from-primary to-green-700 rounded-xl text-white p-8 text-center">
               <h3 className="text-2xl font-bold mb-4 text-slate-50">Ready to Transport Your Liquid Cargo?</h3>
               <p className="mb-6 text-green-50">
                 Contact our specialists today for tailored transportation solutions.
               </p>
-              <a href="/contact" className="inline-block bg-white text-brand-navy px-6 py-3 rounded-lg font-medium hover:bg-green-50 transition-colors">
+              <a href="/contact" className="inline-block bg-white text-primary px-6 py-3 rounded-lg font-medium hover:bg-green-50 transition-colors">
                 Get a Quote
               </a>
             </motion.div>

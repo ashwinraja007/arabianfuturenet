@@ -13,7 +13,7 @@ const LCLConsolidation = () => {
       
       <main className="flex-grow pt-24">
         {/* Hero Section */}
-        <section className="bg-gradient-to-br from-blue-50 to-blue-100 py-12 md:py-16">
+        <section className="bg-gradient-to-br from-green-50 to-green-100 py-12 md:py-16">
           <div className="container mx-auto px-4">
             <div className="flex flex-col md:flex-row items-center gap-8">
               <div className="md:w-1/2">
@@ -106,7 +106,7 @@ const LCLConsolidation = () => {
             </div>
             
             {/* Features Grid */}
-            <section className="py-20 bg-gradient-to-r from-brand-navy to-brand-navy text-white px-6 my-[49px] rounded-3xl">
+            <section className="py-20 bg-gradient-to-r from-primary to-green-700 text-white px-6 my-[49px] rounded-3xl">
               <div className="max-w-7xl mx-auto">
                 <div className="grid lg:grid-cols-2 gap-16 items-center">
                   <motion.div initial={{
@@ -134,12 +134,12 @@ const LCLConsolidation = () => {
                     }} viewport={{
                       once: true
                     }} className="flex items-center gap-3">
-                          <div className="w-2 h-2 bg-blue-300 rounded-full flex-shrink-0"></div>
-                          <span className="text-blue-100">{item}</span>
+                          <div className="w-2 h-2 bg-green-300 rounded-full flex-shrink-0"></div>
+                          <span className="text-green-100">{item}</span>
                         </motion.div>)}
                     </div>
 
-                    <p className="text-lg text-blue-100 leading-relaxed">
+                    <p className="text-lg text-green-100 leading-relaxed">
                       With our strategic global hub network and advanced tracking systems, we provide reliable, transparent, and economical LCL solutions tailored to your supply chain needs.
                     </p>
                     <p className="text-lg text-yellow-500 leading-relaxed font-bold my-[20px]">At GGL, we don't just move freight — we move businesses forward.</p>
@@ -181,12 +181,12 @@ const LCLConsolidation = () => {
             duration: 0.5
           }} viewport={{
             once: true
-          }} className="bg-gradient-to-r from-brand-navy to-brand-navy rounded-xl text-white p-8 text-center py-[33px]">
+          }} className="bg-gradient-to-r from-primary to-green-700 rounded-xl text-white p-8 text-center py-[33px]">
               <h3 className="text-2xl font-bold mb-4 text-slate-50">Ready to Consolidate Your Shipments?</h3>
-              <p className="mb-6 text-blue-50">
+              <p className="mb-6 text-green-50">
                 Contact our team today for tailored LCL consolidation solutions.
               </p>
-              <Link to="/contact" className="inline-block bg-white text-brand-navy px-6 py-3 rounded-lg font-medium hover:bg-blue-50 transition-colors">
+              <Link to="/contact" className="inline-block bg-white text-primary px-6 py-3 rounded-lg font-medium hover:bg-green-50 transition-colors">
                 Get a Quote
               </Link>
             </motion.div>

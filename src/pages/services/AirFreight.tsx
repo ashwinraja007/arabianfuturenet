@@ -11,7 +11,7 @@ const AirFreight = () => {
       
       <main className="flex-grow pt-24">
         {/* Hero Section */}
-        <section className="bg-gradient-to-br from-blue-50 to-blue-100 py-12 md:py-16">
+        <section className="bg-gradient-to-br from-green-50 to-green-100 py-12 md:py-16">
           <div className="container mx-auto px-4">
             <div className="flex flex-col md:flex-row items-center gap-8">
               <div className="md:w-1/2">
@@ -117,7 +117,7 @@ const AirFreight = () => {
             }} viewport={{
               once: true
             }} className="bg-white rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow border border-gray-100">
-                  <div className="mb-4 bg-blue-50 p-3 rounded-full inline-block">{feature.icon}</div>
+                  <div className="mb-4 bg-green-50 p-3 rounded-full inline-block">{feature.icon}</div>
                   <h3 className="text-xl font-semibold mb-2 text-gray-800">{feature.title}</h3>
                   <p className="text-gray-600">{feature.description}</p>
                 </motion.div>)}
@@ -137,12 +137,12 @@ const AirFreight = () => {
             duration: 0.5
           }} viewport={{
             once: true
-          }} className="bg-gradient-to-r from-brand-navy to-blue-700 rounded-xl text-white p-8 text-center">
+          }} className="bg-gradient-to-r from-primary to-green-700 rounded-xl text-white p-8 text-center">
               <h3 className="text-2xl font-bold mb-4 text-slate-50">Ready to Ship with Us?</h3>
-              <p className="mb-6 text-blue-50">
+              <p className="mb-6 text-green-50">
                 Contact our team today for tailored air freight solutions.
               </p>
-              <Link to="/contact" className="inline-block bg-white text-blue-700 px-6 py-3 rounded-lg font-medium hover:bg-blue-50 transition-colors">
+              <Link to="/contact" className="inline-block bg-white text-primary px-6 py-3 rounded-lg font-medium hover:bg-green-50 transition-colors">
                 Get a Quote
               </Link>
             </motion.div>
