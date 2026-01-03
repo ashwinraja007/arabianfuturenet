@@ -1,9 +1,19 @@
 import React, { useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Plane, ArrowRight, Truck, Package, Anchor, Warehouse, FileCheck } from "lucide-react";
+import {
+  Plane,
+  ArrowRight,
+  Truck,
+  Package,
+  Anchor,
+  Warehouse,
+  FileCheck
+} from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
+
+/* -------------------- Service Card -------------------- */
 
 const EnhancedServiceCard = ({
   image,
@@ -20,39 +30,46 @@ const EnhancedServiceCard = ({
 }) => {
   return (
     <motion.div
-      whileHover={{ y: -2 }}
-      whileTap={{ scale: 0.98 }}
-      transition={{ type: "spring", stiffness: 300 }}
-      className="group w-full overflow-hidden rounded-lg bg-white border border-gray-200 shadow hover:shadow-md transition-shadow"
+      whileHover={{ y: -6 }}
+      transition={{ type: "spring", stiffness: 260, damping: 18 }}
+      className="group h-full rounded-xl border border-gray-200 bg-white shadow-sm hover:shadow-lg overflow-hidden"
     >
-      <Link to={link} className="flex flex-col h-full" onClick={() => window.scrollTo(0, 0)}>
-        <div className="overflow-hidden">
-          <AspectRatio ratio={3 / 2}>
+      <Link to={link} onClick={() => window.scrollTo(0, 0)} className="flex flex-col h-full">
+        {/* Image */}
+        <div className="relative overflow-hidden">
+          <AspectRatio ratio={16 / 10}>
             <img
               src={image}
               alt={title}
-              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
             />
           </AspectRatio>
+          <div className="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors" />
         </div>
-        <div className="flex flex-col flex-grow p-3 gap-2">
-          <div className="flex items-center gap-2 text-brand-navy">
-            <div className="w-6 h-6 rounded-full bg-brand-green flex items-center justify-center text-white">
-              {React.cloneElement(icon, { size: 14 })}
+
+        {/* Content */}
+        <div className="flex flex-col flex-grow p-4 gap-3">
+          <div className="flex items-center gap-3">
+            <div className="flex h-9 w-9 items-center justify-center rounded-full bg-brand-green text-white">
+              {React.cloneElement(icon, { size: 18 })}
             </div>
-            <h3 className="text-sm font-semibold">{title}</h3>
+            <h3 className="text-base font-semibold text-brand-navy">
+              {title}
+            </h3>
           </div>
-          <p className="text-xs text-gray-600 line-clamp-3 leading-snug">
+
+          <p className="text-sm text-gray-600 leading-relaxed line-clamp-3">
             {description}
           </p>
-          <div className="text-xs text-brand-green font-medium inline-flex items-center mt-1">
+
+          <div className="mt-auto pt-2 flex items-center text-sm font-medium text-brand-green">
             Learn More
             <motion.span
-              className="ml-1"
-              animate={{ x: [0, 4, 0] }}
-              transition={{ duration: 1.2, repeat: Infinity, repeatType: "mirror" }}
+              className="ml-2"
+              animate={{ x: [0, 6, 0] }}
+              transition={{ duration: 1.6, repeat: Infinity }}
             >
-              <ArrowRight size={12} />
+              <ArrowRight size={14} />
             </motion.span>
           </div>
         </div>
@@ -61,13 +78,15 @@ const EnhancedServiceCard = ({
   );
 };
 
+/* -------------------- Services Section -------------------- */
+
 export const Services = () => {
   const services = [
     {
       image: "/lovable-uploads/oceanfrieght.jpg",
       title: "Ocean Freight",
       description:
-        "Complete FCL and LCL services with multiple sailing options. We provide transparency of all pricing at origin, destination and ocean freight charges with reliable partner network worldwide.",
+        "Complete FCL and LCL services with flexible sailings, transparent pricing, and a reliable global partner network.",
       icon: <Anchor />,
       link: "/services/ocean-freight"
     },
@@ -75,7 +94,7 @@ export const Services = () => {
       image: "/cargoplane.png",
       title: "Air Freight",
       description:
-        "As a leading independent airfreight company, we provide flexibility and choice worldwide by working with specialist carriers who provide customized schedules and solutions.",
+        "Time-critical air freight solutions with global reach, priority handling, and optimized carrier selection.",
       icon: <Plane />,
       link: "/services/air-freight"
     },
@@ -83,7 +102,7 @@ export const Services = () => {
       image: "/lovable-uploads/cc.jpg",
       title: "Customs Clearance",
       description:
-        "As leading custom clearing agents, we ensure all clearance formalities are done smoothly so customers receive their goods on time with complete study of local rules and regulations.",
+        "End-to-end customs brokerage ensuring smooth clearance, regulatory compliance, and on-time delivery.",
       icon: <FileCheck />,
       link: "/services/customs-clearance"
     },
@@ -91,7 +110,7 @@ export const Services = () => {
       image: "/truck12.png",
       title: "Transportation",
       description:
-        "Dedicated fleet of vehicles for timely domestic distribution and deliveries. Our efficient operational infrastructure provides high productivity and reliable distribution operations.",
+        "Dedicated domestic transportation fleet enabling fast, reliable, and scalable distribution operations.",
       icon: <Truck />,
       link: "/services/transportation"
     },
@@ -99,7 +118,7 @@ export const Services = () => {
       image: "/lovable-uploads/warehouse.jpg",
       title: "Warehousing",
       description:
-        "Premier supply chain solutions addressing the full spectrum of logistics needs. We facilitate movement of goods from suppliers to manufacturers and from brand owners to distributors.",
+        "Secure storage, inventory management, and value-added warehousing solutions for modern supply chains.",
       icon: <Warehouse />,
       link: "/services/warehousing"
     },
@@ -107,7 +126,7 @@ export const Services = () => {
       image: "/projectcargo3.png",
       title: "Project Cargo",
       description:
-        "Specialized transportation of large, heavy, high-value, or complex equipment, often associated with large-scale infrastructure or construction projects.",
+        "Expert handling of oversized, heavy-lift, and complex cargo for infrastructure and industrial projects.",
       icon: <Package />,
       link: "/services/project-cargo"
     }
@@ -117,12 +136,12 @@ export const Services = () => {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: { staggerChildren: 0.1 }
+      transition: { staggerChildren: 0.12 }
     }
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
+    hidden: { opacity: 0, y: 24 },
     visible: { opacity: 1, y: 0 }
   };
 
@@ -135,28 +154,32 @@ export const Services = () => {
     <motion.section
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, amount: 0.1 }}
+      viewport={{ once: true, amount: 0.15 }}
       variants={containerVariants}
-      className="py-10 bg-gradient-to-b from-white to-brand-lightGray"
+      className="py-14 bg-gradient-to-b from-white to-brand-lightGray"
     >
-      <div className="container mx-auto px-4 max-w-6xl">
-        <motion.div variants={itemVariants} className="text-center mb-8">
-          <h2 className="text-2xl md:text-3xl font-bold text-brand-navy mb-3">Our Core Services</h2>
-          <div className="w-24 h-1 bg-brand-green mx-auto mb-4"></div>
-          <p className="text-gray-600 max-w-xl mx-auto text-sm md:text-base">
-            Discover our comprehensive range of logistics solutions designed to meet your global shipping needs.
+      <div className="container mx-auto max-w-6xl px-4">
+        {/* Heading */}
+        <motion.div variants={itemVariants} className="text-center mb-12">
+          <h2 className="text-2xl md:text-3xl font-bold text-brand-navy">
+            Our Core Services
+          </h2>
+          <div className="mx-auto mt-4 mb-5 h-1 w-24 rounded bg-brand-green" />
+          <p className="mx-auto max-w-xl text-sm md:text-base text-gray-600">
+            Comprehensive logistics solutions designed to support global trade
+            with reliability, efficiency, and scale.
           </p>
         </motion.div>
 
+        {/* Grid */}
         <motion.div
           variants={containerVariants}
-          className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-6xl mx-auto"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
         >
           {services.map((service, index) => (
             <motion.div
               key={index}
               variants={itemVariants}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
               className="h-full"
             >
               <EnhancedServiceCard {...service} />
@@ -164,17 +187,17 @@ export const Services = () => {
           ))}
         </motion.div>
 
+        {/* CTA */}
         <motion.div
           variants={itemVariants}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="flex justify-center mt-8"
+          className="mt-12 flex justify-center"
         >
           <Link to="/services" onClick={() => window.scrollTo(0, 0)}>
-            <Button className="group transition-all duration-300 text-sm flex items-center gap-2 bg-brand-navy hover:bg-brand-navy/90 text-white">
+            <Button className="group flex items-center gap-3 rounded-full bg-brand-navy px-6 py-2 text-sm text-white hover:bg-brand-navy/90">
               Explore All Services
               <motion.span
-                animate={{ x: [0, 5, 0] }}
-                transition={{ duration: 1.5, repeat: Infinity, repeatType: "mirror" }}
+                animate={{ x: [0, 6, 0] }}
+                transition={{ duration: 1.5, repeat: Infinity }}
               >
                 <ArrowRight className="h-4 w-4" />
               </motion.span>
