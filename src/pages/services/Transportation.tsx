@@ -11,7 +11,7 @@ const Transportation = () => {
       
       <main className="flex-grow pt-24">
         {/* Hero Section */}
-        <section className="bg-gradient-to-br from-blue-50 to-blue-100 py-12 md:py-16">
+        <section className="bg-gradient-to-br from-green-50 to-green-100 py-12 md:py-16">
           <div className="container mx-auto px-4">
             <div className="flex flex-col md:flex-row items-center gap-8">
               <div className="md:w-1/2">
@@ -116,12 +116,12 @@ speed, reliability, and exceptional service to drive your business forward.</p>
             duration: 0.5
           }} viewport={{
             once: true
-          }} className="bg-gradient-to-r from-brand-navy to-blue-700 rounded-xl text-white p-8 text-center">
+          }} className="bg-gradient-to-r from-primary to-green-700 rounded-xl text-white p-8 text-center">
               <h3 className="text-2xl font-bold mb-4 text-slate-50">Ready to Transport Your Cargo?</h3>
-              <p className="mb-6 text-blue-50">
+              <p className="mb-6 text-green-50">
                 Contact our team today for reliable transportation solutions.
               </p>
-              <Link to="/contact" className="inline-block bg-white text-brand-navy px-6 py-3 rounded-lg font-medium hover:bg-blue-50 transition-colors">
+              <Link to="/contact" className="inline-block bg-white text-primary px-6 py-3 rounded-lg font-medium hover:bg-green-50 transition-colors">
                 Get a Quote
               </Link>
             </motion.div>
