@@ -64,37 +64,36 @@ const Hero = () => {
       {/* Overlay */}
       <div className="absolute inset-0 bg-black/45 z-[1]" />
 
-      {/* CONTENT LAYER */}
-      <div className="relative z-[2] min-h-screen flex flex-col justify-end pb-10 px-4">
-        <div className="max-w-7xl mx-auto w-full text-center space-y-3 mb-10">
-          {/* Service Text */}
+      {/* LEFT BUTTON RAIL */}
+      <div className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-[5]">
+        <div className="flex flex-col gap-3">
+          {portalLinks.map((link, i) => (
+            <a
+              key={i}
+              href={link.url}
+              target={link.external ? '_blank' : undefined}
+              rel="noopener noreferrer"
+            >
+              <button className="w-14 h-14 flex flex-col items-center justify-center bg-white/95 hover:bg-white rounded-xl shadow hover:shadow-md transition">
+                {link.icon}
+                <span className="text-[10px] font-bold mt-1">
+                  {link.title}
+                </span>
+              </button>
+            </a>
+          ))}
+        </div>
+      </div>
+
+      {/* CENTER TEXT */}
+      <div className="relative z-[3] min-h-screen flex items-end justify-center pb-20 px-4">
+        <div className="text-center space-y-3 max-w-xl">
           <h2 className="text-white text-3xl sm:text-4xl md:text-5xl font-extrabold">
             {slides[active].title}
           </h2>
-          <p className="text-white/85 text-sm sm:text-base md:text-lg max-w-xl mx-auto">
+          <p className="text-white/85 text-sm sm:text-base md:text-lg">
             {slides[active].desc}
           </p>
-        </div>
-
-        {/* Buttons */}
-        <div className="max-w-7xl mx-auto w-full">
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3">
-            {portalLinks.map((link, i) => (
-              <a
-                key={i}
-                href={link.url}
-                target={link.external ? '_blank' : undefined}
-                rel="noopener noreferrer"
-              >
-                <button className="w-full h-14 flex flex-col items-center justify-center gap-1 bg-white/95 hover:bg-white rounded-lg shadow hover:shadow-md transition">
-                  {link.icon}
-                  <span className="font-bold text-xs sm:text-sm">
-                    {link.title}
-                  </span>
-                </button>
-              </a>
-            ))}
-          </div>
         </div>
       </div>
     </section>
