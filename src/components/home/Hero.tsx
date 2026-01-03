@@ -68,8 +68,8 @@ const Hero = () => {
       {/* Overlay */}
       <div className="absolute inset-0 bg-black/45 z-[1]" />
 
-      {/* CONTENT – MIDDLE RIGHT (LOGO LEVEL) */}
-      <div className="absolute right-6 md:right-16 top-28 md:top-32 z-[3] max-w-md text-right">
+      {/* CONTENT – LEFT MIDDLE (LOGO LEVEL) */}
+      <div className="absolute left-6 md:left-16 top-28 md:top-32 z-[3] max-w-md text-left">
         <h2 className="text-white text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight">
           {slides[active].title}
         </h2>
@@ -78,8 +78,8 @@ const Hero = () => {
         </p>
       </div>
 
-      {/* BOTTOM BUTTONS – MOVED UP */}
-      <div className="absolute bottom-14 left-0 right-0 z-[5] px-4">
+      {/* BOTTOM BUTTONS – MOVED UP MORE */}
+      <div className="absolute bottom-20 left-0 right-0 z-[5] px-4">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3">
             {portalLinks.map((link, index) => (
