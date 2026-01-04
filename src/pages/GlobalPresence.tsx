@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom'; // ✅ Fixed missing import
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
-import ContactMapContainer from '@/components/ContactMapContainer';
-import ContactSidebar from '@/components/ContactSidebar';
+import ContactMapContainer from '@/components/MapContainer';
+import ContactSidebar from '@/components/Sidebar';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { motion } from 'framer-motion';
 import SEO from '@/components/SEO';
