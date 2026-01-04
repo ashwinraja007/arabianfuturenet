@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom'; // ✅ Fixed missing import
-import Navigation from '@/components/Navigation';
-import Footer from '@/components/Footer';
+import { Header } from '@/components/layout/Header';
+import { Footer } from '@/components/layout/Footer';
 import ContactMapContainer from '@/components/ContactMapContainer';
 import ContactSidebar from '@/components/ContactSidebar';
 import { useIsMobile } from '@/hooks/use-mobile';
@@ -39,7 +39,7 @@ const GlobalPresence = () => {
   return (
     <div className="min-h-screen flex flex-col bg-gradient-to-b from-amber-50/30 to-white">
       <ScrollToTop />
-      <Navigation />
+      <Header />
       <SEO
         title="OECL Global Presence | International Logistics Solutions"
         description="Explore OECL's extensive global presence, offering comprehensive logistics and supply chain solutions across key markets. Our strategic network ensures seamless operations for your business worldwide."
