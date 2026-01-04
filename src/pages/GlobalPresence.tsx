@@ -6,7 +6,7 @@ import ContactMapContainer from '@/components/MapContainer';
 import ContactSidebar from '@/components/Sidebar';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { motion } from 'framer-motion';
-F
+
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
