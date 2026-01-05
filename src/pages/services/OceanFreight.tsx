@@ -82,14 +82,7 @@ const OceanFreight = () => {
                 Comprehensive Ocean Freight Services
               </h2>
               <div className="w-24 h-1 bg-brand-gold mx-auto mb-8" />
-              <p className="text-gray-700 mb-6 text-justify">At GGL, our dedicated Ocean Freight Department specializes in comprehensive
-freight management services for both Less-than-Container Load (LCL) and Full
-Container Load (FCL) shipments. Leveraging a well-established, reliable global
-partner network, we ensure efficient coordination of every step—from collection
-at the shipper’s door, through secure storage and customs brokerage, to timely
-delivery at the consignee’s door. Our end-to-end service seamlessly integrates
-customs clearance and compliance, minimizing delays and ensuring smooth
-transit across borders.</p>
+              <p className="text-gray-700 mb-6 text-justify">At Arabian Future Net Shipping Company, our dedicated Ocean Freight Department specializes in comprehensive freight management services for both Less-than-Container Load (LCL) and Full Container Load (FCL) shipments. Leveraging a well-established, reliable global partner network, we ensure efficient coordination of every step—from collection at the shipper’s door, through secure storage and customs brokerage, to timely delivery at the consignee’s door. Our end-to-end service seamlessly integrates customs clearance and compliance, minimizing delays and ensuring smooth transit across borders.</p>
               <p className="text-gray-700 mb-6 text-justify">We offer a broad range of scheduled and multi-route services that connect key
 global economies, providing flexible options to meet diverse shipping needs. Our
 specialized Carrier Pricing Department works closely with clients to design
@@ -102,9 +95,7 @@ keeping them informed of critical updates. This personalized approach to
 
 communication enhances visibility and peace of mind throughout the shipping
 process.</p>
-              <p className="text-gray-700 mb-6 text-justify">Backed by extensive industry expertise and a commitment to excellence, GGL’s
-Ocean Freight Department delivers reliable, efficient, and cost-effective global
-shipping solutions designed to support your business growth and logistics needs.</p>
+              <p className="text-gray-700 mb-6 text-justify">Backed by extensive industry expertise and a commitment to excellence, Arabian Future Net Shipping Company Ocean Freight Department delivers reliable, efficient, and cost-effective global shipping solutions designed to support your business growth and logistics needs.</p>
             </div>
 
             {/* CTA Section */}
