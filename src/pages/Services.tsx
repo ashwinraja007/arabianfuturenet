@@ -147,7 +147,7 @@ const Services = () => {
       link: "/services/transportation"
     },
     {
-      image: "/6.png",
+      image: "/5.png",
       title: "Warehousing",
       description:
         "Secure storage, inventory management, and value-added warehousing solutions for modern supply chains.",
