@@ -168,20 +168,13 @@ export const Footer = () => {
       <div className="border-t border-gray-700/50">
         <div className="container mx-auto px-4 py-4">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-sm text-gray-400 text-center md:text-left">
+            <p className="text-sm text-gray-400 text-center md:text-right mx-[400px]">
               © {new Date().getFullYear()} Arabian Future Net Shipping Company. All Rights Reserved.
             </p>
             <div className="flex items-center gap-6 text-sm">
-              <Link to="/privacy-policy" className="text-gray-400 hover:text-brand-green transition-colors">
-                Privacy Policy
-              </Link>
-              <Link to="/terms-of-use" className="text-gray-400 hover:text-brand-green transition-colors">
-                Terms of Use
-              </Link>
-              <div className="flex items-center gap-2 text-gray-400">
-                <Globe size={14} className="text-brand-green" />
-                <span>Global Logistics Partner</span>
-              </div>
+              
+              
+              
             </div>
           </div>
         </div>
