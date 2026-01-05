@@ -11,9 +11,9 @@ const ThreePL = () => {
     <div className="min-h-screen flex flex-col">
       <Header />
       
-      <main className="flex-grow pt-24">
+      <main className="flex-grow pt-16 md:pt-20">
         {/* Hero Section */}
-        <section className="bg-gradient-to-br from-emerald-50 to-emerald-100 py-12 md:py-16">
+        <section className="bg-gradient-to-br from-green-50 to-green-100 py-12 md:py-16">
           <div className="container mx-auto px-4">
             <div className="flex flex-col md:flex-row items-center gap-8">
               <div className="md:w-1/2">
