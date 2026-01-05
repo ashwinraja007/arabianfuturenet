@@ -45,11 +45,11 @@ const CountrySelector = () => {
 
   // Always UAE
   const displayCountry = countries.find(
-    (c) => c.country === "UAE"
+    (c) => c.country === "SAUDI ARABIA"
   ) as CountryData;
 
   const sortedCountries = countries
-    .filter((c) => c.country !== "UAE")
+    .filter((c) => c.country !== "SAUDI ARABIA")
     .sort((a, b) => a.priority - b.priority);
 
   const handleCountrySelect = (country: CountryData) => {
