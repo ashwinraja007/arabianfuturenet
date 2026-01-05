@@ -48,7 +48,7 @@ const ServiceCard = ({
       case "Transportation":
         return "/truck12.png";
       case "Warehousing":
-        return "/6.png";
+        return "/5.png";
       default:
         return image;
     }
