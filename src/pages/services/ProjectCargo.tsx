@@ -34,7 +34,7 @@ const ProjectCargo = () => {
               }} transition={{
                 duration: 0.5,
                 delay: 0.1
-              }} className="text-lg text-gray-700 mb-6">At GGL, we specialize in managing project cargo—the transportation of large, heavy, high-value, or complex pieces of equipment and materials essential to major infrastructure, engineering, or industrial projects.Our expertise ensures that these shipments receive the customized handling, multimodal transport solutions, and precise coordination needed to meet strict timelines and safety standards.</motion.p>
+              }} className="text-lg text-gray-700 mb-6">At Arabian Future Net Shipping Company, we specialize in managing project cargo—the transportation of large, heavy, high-value, or complex pieces of equipment and materials essential to major infrastructure, engineering, or industrial projects.Our expertise ensures that these shipments receive the customized handling, multimodal transport solutions, and precise coordination needed to meet strict timelines and safety standards.</motion.p>
                 <motion.div initial={{
                 opacity: 0,
                 y: 20
@@ -160,114 +160,16 @@ const ProjectCargo = () => {
                     <Shield className="h-8 w-8 text-brand-gold mr-3" />
                     <h3 className="text-xl font-semibold text-gray-800">Regulatory Complexity</h3>
                   </div>
-                  <p className="text-gray-600 text-justify">
-                    GGL manages permits, route surveys, customs clearance, and coordination with local authorities to navigate the complexities of international logistics.
-                  </p>
+                  <p className="text-gray-600 text-justify">Arabian Future Net Shipping Company manages permits, route surveys, customs clearance, and coordination with local authorities to navigate the complexities of international logistics.</p>
                 </motion.div>
               </div>
             </div>
             
             {/* Why Choose GGL Section */}
-            <div className="max-w-4xl mx-auto mb-16">
-              <h2 className="text-2xl md:text-3xl font-bold mb-6 text-center text-gray-800">
-                Why Choose GGL for Your Project Cargo Needs?
-              </h2>
-              <div className="w-24 h-1 bg-brand-gold mx-auto mb-8"></div>
-              
-              <p className="text-gray-700 mb-8 text-justify">
-                Managing project cargo requires experience, precision, and global coordination. As a seasoned freight forwarder and global logistics company, GGL provides:
-              </p>
-              
-              <div className="space-y-6">
-                {[{
-                icon: <Route className="h-6 w-6" />,
-                title: "Route Planning and Feasibility Studies",
-                description: "We assess the most efficient and cost-effective routes for your cargo."
-              }, {
-                icon: <Shield className="h-6 w-6" />,
-                title: "Secure Loading and Lashing",
-                description: "Our team ensures that all cargo is securely loaded and lashed to prevent damage during transit."
-              }, {
-                icon: <Eye className="h-6 w-6" />,
-                title: "Real-Time Shipment Tracking",
-                description: "Stay informed with our tracking services, providing updates throughout the journey."
-              }, {
-                icon: <Users className="h-6 w-6" />,
-                title: "Coordination with Ports, Customs, and Local Transport Agencies",
-                description: "We handle all logistics aspects, ensuring smooth operations from start to finish."
-              }, {
-                icon: <DollarSign className="h-6 w-6" />,
-                title: "Cost-Effective Ocean Freight, Sea Freight, or Air Freight Solutions",
-                description: "GGL offers tailored solutions to meet your specific needs and budget."
-              }].map((item, index) => <motion.div key={index} initial={{
-                opacity: 0,
-                x: -20
-              }} whileInView={{
-                opacity: 1,
-                x: 0
-              }} transition={{
-                duration: 0.5,
-                delay: index * 0.1
-              }} viewport={{
-                once: true
-              }} className="flex items-start gap-4 p-4 bg-gray-50 rounded-lg">
-                    <div className="bg-brand-gold text-brand-navy p-2 rounded-full flex-shrink-0">
-                      {item.icon}
-                    </div>
-                    <div>
-                      <h3 className="font-semibold text-gray-800 mb-2">{item.title}</h3>
-                      <p className="text-gray-600 text-sm">{item.description}</p>
-                    </div>
-                  </motion.div>)}
-              </div>
-            </div>
+            
             
             {/* Benefits Section */}
-            <div className="max-w-4xl mx-auto mb-16">
-              <h2 className="text-2xl md:text-3xl font-bold mb-6 text-center text-gray-800">
-                Benefits of Professional Project Cargo Services
-              </h2>
-              <div className="w-24 h-1 bg-brand-gold mx-auto mb-8"></div>
-              
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {[{
-                icon: <CheckCircle className="h-6 w-6" />,
-                title: "Minimized Risk of Damage or Delay",
-                description: "Our experienced team ensures that your cargo is handled with the utmost care, reducing the risk of damage or delays."
-              }, {
-                icon: <Shield className="h-6 w-6" />,
-                title: "Compliance with Safety and Legal Standards",
-                description: "GGL adheres to all safety and legal regulations, ensuring that your shipments are compliant with international standards."
-              }, {
-                icon: <DollarSign className="h-6 w-6" />,
-                title: "Cost Efficiency Through Optimized Planning",
-                description: "We plan every aspect of the transport process to minimize costs and maximize efficiency."
-              }, {
-                icon: <Globe className="h-6 w-6" />,
-                title: "Seamless International Logistics Support",
-                description: "With our global network and expertise, we provide comprehensive support for your international shipments."
-              }].map((benefit, index) => <motion.div key={index} initial={{
-                opacity: 0,
-                y: 20
-              }} whileInView={{
-                opacity: 1,
-                y: 0
-              }} transition={{
-                duration: 0.5,
-                delay: index * 0.1
-              }} viewport={{
-                once: true
-              }} className="bg-white rounded-lg p-6 shadow-md border-l-4 border-brand-gold">
-                    <div className="flex items-center mb-3">
-                      <div className="bg-green-100 text-green-600 p-2 rounded-full mr-3">
-                        {benefit.icon}
-                      </div>
-                      <h3 className="font-semibold text-gray-800">{benefit.title}</h3>
-                    </div>
-                    <p className="text-gray-600 text-sm">{benefit.description}</p>
-                  </motion.div>)}
-              </div>
-            </div>
+            
             
             {/* CTA Section */}
             <motion.div initial={{

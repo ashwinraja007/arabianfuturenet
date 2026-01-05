@@ -77,12 +77,7 @@ export const Footer = () => {
                 info.sa@futurenetlogistics.com
               </a>
             </div>
-            <div className="flex items-center gap-3 text-sm">
-              <div className="bg-brand-green/20 p-2 rounded-full">
-                <Clock size={16} className="text-brand-green" />
-              </div>
-              <span className="text-gray-300">Sun - Thu: 8:00 AM - 6:00 PM</span>
-            </div>
+            
           </div>
 
           {/* Services Grid - 3x3 Layout */}
