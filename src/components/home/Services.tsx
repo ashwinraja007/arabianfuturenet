@@ -84,7 +84,7 @@ const EnhancedServiceCard = ({
 export const Services = () => {
   const services = [
     {
-      image: "/lovable-uploads/oceanfrieght.jpg",
+      image: "/1.png",
       title: "Ocean Freight",
       description:
         "Complete FCL and LCL services with flexible sailings, transparent pricing, and a reliable global partner network.",
@@ -92,7 +92,7 @@ export const Services = () => {
       link: "/services/ocean-freight"
     },
     {
-      image: "/cargoplane.png",
+      image: "/2.png",
       title: "Air Freight",
       description:
         "Time-critical air freight solutions with global reach, priority handling, and optimized carrier selection.",
@@ -100,7 +100,7 @@ export const Services = () => {
       link: "/services/air-freight"
     },
     {
-      image: "/lovable-uploads/cc.jpg",
+      image: "/3.png",
       title: "Customs Clearance",
       description:
         "End-to-end customs brokerage ensuring smooth clearance, regulatory compliance, and on-time delivery.",
@@ -116,7 +116,7 @@ export const Services = () => {
       link: "/services/transportation"
     },
     {
-      image: "/lovable-uploads/warehouse.jpg",
+      image: "/5.png",
       title: "Warehousing",
       description:
         "Secure storage, inventory management, and value-added warehousing solutions for modern supply chains.",
@@ -124,7 +124,7 @@ export const Services = () => {
       link: "/services/warehousing"
     },
     {
-      image: "/projectcargo3.png",
+      image: "/4.png",
       title: "Project Cargo",
       description:
         "Expert handling of oversized, heavy-lift, and complex cargo for infrastructure and industrial projects.",
@@ -132,7 +132,7 @@ export const Services = () => {
       link: "/services/project-cargo"
     },
     {
-      image: "/lovable-uploads/warehouse.jpg",
+      image: "/6.png",
       title: "3PL Services",
       description:
         "End-to-end third-party logistics solutions including warehousing, distribution, and supply chain management.",
