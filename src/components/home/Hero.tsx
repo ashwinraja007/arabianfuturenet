@@ -9,7 +9,7 @@ const slides = [
   },
   {
     image: '/liquid.png',
-    title: 'Liquid Logistics',
+    title: 'Transportation',
     desc: 'Safe and compliant bulk liquid transportation',
   },
   {
