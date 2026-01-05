@@ -4,13 +4,22 @@
 @tailwind components;
 @tailwind utilities;
 
+/* =========================
+   BASE STYLES
+   ========================= */
 @layer base {
   html {
-    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont,
+      'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     scroll-behavior: smooth;
   }
-  
-  h1, h2, h3, h4, h5, h6 {
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     @apply font-semibold tracking-tight text-brand-navy;
   }
 
@@ -90,24 +99,50 @@
   }
 }
 
+/* =========================
+   COMPONENT UTILITIES
+   ========================= */
 @layer components {
   .section-title {
     @apply text-2xl lg:text-3xl font-bold text-brand-navy;
   }
-  
+
   .section-spacing {
     @apply py-14 md:py-20;
   }
-  
+
   .card-hover {
     @apply transition-all duration-300 hover:shadow-card-hover hover:-translate-y-1;
   }
-  
+
   .button-primary {
     @apply bg-brand-green hover:bg-emerald-600 text-white font-medium py-2 px-4 rounded-md shadow-sm hover:shadow transition-all;
   }
-  
+
   .button-secondary {
     @apply bg-white hover:bg-gray-50 text-brand-navy font-medium py-2 px-4 rounded-md shadow-sm hover:shadow border border-gray-200 transition-all;
   }
+}
+
+/* =========================
+   GOOGLE MY MAPS FIX
+   ========================= */
+/* Safely hides the black header bar and fills container */
+
+.map-wrapper {
+  position: relative;
+  width: 100%;
+  height: 320px;
+  overflow: hidden;
+  border-radius: 0.75rem;
+  background: #fff;
+}
+
+.map-iframe {
+  position: absolute;
+  top: -56px; /* hides Google My Maps black header */
+  left: 0;
+  width: 100%;
+  height: calc(100% + 56px);
+  border: 0;
 }
