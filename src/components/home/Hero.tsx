@@ -14,26 +14,11 @@ interface PortalLink {
 }
 
 const slides: Slide[] = [
-  {
-    title: 'Ocean Freight',
-    desc: 'Reliable global sea transportation solutions',
-  },
-  {
-    title: 'Transportation',
-    desc: 'Safe and compliant bulk liquid transportation',
-  },
-  {
-    title: 'Warehousing',
-    desc: 'Secure storage and distribution facilities',
-  },
-  {
-    title: 'Customs Clearance',
-    desc: 'Smooth and compliant border clearance services',
-  },
-  {
-    title: 'Project Cargo',
-    desc: 'End-to-end handling of oversized shipments',
-  },
+  { title: 'Ocean Freight', desc: 'Reliable global sea transportation solutions' },
+  { title: 'Transportation', desc: 'Safe and compliant bulk liquid transportation' },
+  { title: 'Warehousing', desc: 'Secure storage and distribution facilities' },
+  { title: 'Customs Clearance', desc: 'Smooth and compliant border clearance services' },
+  { title: 'Project Cargo', desc: 'End-to-end handling of oversized shipments' },
 ];
 
 const portalLinks: PortalLink[] = [
@@ -59,19 +44,20 @@ const Hero: React.FC = () => {
     <section className="relative min-h-screen overflow-hidden">
       {/* VIDEO BACKGROUND */}
       <video
-        className="absolute inset-0 w-full h-full object-cover"
-        src="/heroone.mp4‎"
+        className="absolute inset-0 w-full h-full object-cover z-0"
+        src="/heroone.mp4"
         autoPlay
         loop
         muted
         playsInline
+        preload="auto"
       />
 
       {/* OVERLAY */}
       <div className="absolute inset-0 bg-black/45 z-[1]" />
 
       {/* TEXT CONTENT */}
-      <div className="absolute top-1/2 left-6 md:left-16 -translate-y-1/2 z-[3] max-w-md text-left">
+      <div className="absolute top-1/2 left-6 md:left-16 -translate-y-1/2 z-[3] max-w-md">
         <h2 className="text-white text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight">
           {slides[active].title}
         </h2>
