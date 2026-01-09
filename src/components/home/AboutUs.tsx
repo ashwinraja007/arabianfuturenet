@@ -67,7 +67,7 @@ const AboutUs = () => {
             >
               <div className="w-full max-w-xl overflow-hidden rounded-lg shadow-lg bg-white">
                 <img
-                  src="/about2.png"
+                  src="/7.png"
                   alt="About Arabian Future Net Shipping"
                   loading="lazy"
                   className="w-full h-auto object-contain rounded-lg"
