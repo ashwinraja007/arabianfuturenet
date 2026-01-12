@@ -71,6 +71,7 @@ const ServiceCard = ({
           <AspectRatio ratio={16 / 9}>
             <img
               src={getServiceImage()}
+              src={image}
               alt={title}
               className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
             />
