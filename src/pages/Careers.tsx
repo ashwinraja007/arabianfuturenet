@@ -1,31 +1,35 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { motion } from 'framer-motion';
 import { Users, TrendingUp, Heart, Globe, Award, Target } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { client } from '../../client';
-import { urlFor } from '../../image';
 import { Seo } from '@/components/common/Seo';
 
 const Careers = () => {
-  const [data, setData] = useState<any>(null);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const result = await client.fetch(`
-        *[_type == "careersPage"][0] {
-          hero,
-          benefits,
-          cta,
-          seo
-        }
-      `);
-      setData(result);
-    };
-    fetchData();
-  }, []);
+  const data = {
+    hero: {
+      title: 'Join Our Global Team',
+      description: "Build your career with one of Singapore's leading logistics companies. We're looking for passionate individuals to join our mission of connecting the world through exceptional logistics solutions.",
+      image: null
+    },
+    benefits: {
+      title: 'Why Choose GGL?',
+      description: 'At GGL, we believe our people are our greatest asset. We foster an environment where talent thrives and careers flourish.',
+      items: [
+        { title: "Global Opportunities", description: "Work with diverse teams across multiple countries.", icon: "Globe" },
+        { title: "Career Growth", description: "Continuous learning and development programs.", icon: "TrendingUp" },
+        { title: "Inclusive Culture", description: "A workplace that values every individual's contribution.", icon: "Heart" }
+      ]
+    },
+    cta: {
+      title: 'Ready to Start Your Journey?',
+      description: "Don't see the right position? Send us your resume and we'll keep you in mind for future opportunities.",
+      image: null
+    },
+    seo: null
+  };
 
   const getIcon = (iconName: string) => {
     const icons: any = {
@@ -46,15 +50,6 @@ const Careers = () => {
       <main className="flex-grow pt-20">
         {/* Hero Section */}
         <section className="relative bg-gradient-to-r from-brand-navy to-brand-navy/90 text-white py-16 overflow-hidden">
-          {data?.hero?.image && (
-            <div className="absolute inset-0 z-0">
-              <img 
-                src={urlFor(data.hero.image).url()} 
-                alt="Careers Hero" 
-                className="w-full h-full object-cover opacity-20"
-              />
-            </div>
-          )}
           <div className="container mx-auto px-4">
             <motion.div initial={{
             opacity: 0,
@@ -157,15 +152,6 @@ const Careers = () => {
 
         {/* CTA Section */}
         <section className="py-16 bg-gradient-to-r from-brand-navy to-brand-navy/90 text-white relative overflow-hidden">
-          {data?.cta?.image && (
-            <div className="absolute inset-0 z-0">
-              <img 
-                src={urlFor(data.cta.image).url()} 
-                alt="CTA Background" 
-                className="w-full h-full object-cover opacity-20"
-              />
-            </div>
-          )}
           <div className="container mx-auto px-4">
             <motion.div initial={{
             opacity: 0,
