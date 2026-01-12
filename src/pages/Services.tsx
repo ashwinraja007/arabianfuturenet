@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useLocation, Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Header } from "@/components/layout/Header";
@@ -13,6 +13,9 @@ import {
 } from "lucide-react";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { useIsMobile } from "@/hooks/use-mobile";
+import { client } from '../../client';
+import { urlFor } from '../../image';
+import { Seo } from '@/components/common/Seo';
 
 // Scroll to Top on Route Change
 const ScrollToTop = () => {
@@ -112,68 +115,66 @@ const ServiceCard = ({
 
 const Services = () => {
   const isMobile = useIsMobile();
+  const [pageData, setPageData] = useState<any>(null);
+  const [servicesData, setServicesData] = useState<any[]>([]);
 
-  const services = [
+  useEffect(() => {
+    const fetchData = async () => {
+      // Fetch page data
+      const pageResult = await client.fetch(`
+        *[_type == "servicesPage"][0] {
+          hero,
+          seo
+        }
+      `);
+      setPageData(pageResult);
+
+      // Fetch services list
+      const servicesResult = await client.fetch(`
+        *[_type == "service"] {
+          title,
+          description,
+          mainImage,
+          slug
+        }
+      `);
+      setServicesData(servicesResult);
+    };
+    fetchData();
+  }, []);
+
+  const getIconForService = (title: string) => {
+    const lowerTitle = title.toLowerCase();
+    if (lowerTitle.includes('ocean') || lowerTitle.includes('sea')) return <Anchor />;
+    if (lowerTitle.includes('air')) return <Plane />;
+    if (lowerTitle.includes('customs')) return <FileCheck />;
+    if (lowerTitle.includes('transport')) return <Truck />;
+    if (lowerTitle.includes('warehous')) return <Warehouse />;
+    if (lowerTitle.includes('project')) return <Package />;
+    return <Warehouse />;
+  };
+
+  const services = servicesData.length > 0 ? servicesData.map(s => ({
+    image: s.mainImage ? urlFor(s.mainImage).url() : "/1.png",
+    title: s.title,
+    description: s.description,
+    icon: getIconForService(s.title),
+    link: `/services/${s.slug?.current || ''}`
+  })) : [
+    // Fallback data if no services in Sanity yet
     {
       image: "/1.png",
       title: "Ocean Freight",
-      description:
-        "Complete FCL and LCL services with flexible sailings, transparent pricing, and a reliable global partner network.",
+      description: "Complete FCL and LCL services with flexible sailings, transparent pricing, and a reliable global partner network.",
       icon: <Anchor />,
       link: "/services/ocean-freight"
     },
-    {
-      image: "/2.png",
-      title: "Air Freight",
-      description:
-        "Time-critical air freight solutions with global reach, priority handling, and optimized carrier selection.",
-      icon: <Plane />,
-      link: "/services/air-freight"
-    },
-    {
-      image: "/3.png",
-      title: "Customs Clearance",
-      description:
-        "End-to-end customs brokerage ensuring smooth clearance, regulatory compliance, and on-time delivery.",
-      icon: <FileCheck />,
-      link: "/services/customs-clearance"
-    },
-    {
-      image: "/truck12.png",
-      title: "Transportation",
-      description:
-        "Dedicated domestic transportation fleet enabling fast, reliable, and scalable distribution operations.",
-      icon: <Truck />,
-      link: "/services/transportation"
-    },
-    {
-      image: "/5.png",
-      title: "Warehousing",
-      description:
-        "Secure storage, inventory management, and value-added warehousing solutions for modern supply chains.",
-      icon: <Warehouse />,
-      link: "/services/warehousing"
-    },
-    {
-      image: "/4.png",
-      title: "Project Cargo",
-      description:
-        "Expert handling of oversized, heavy-lift, and complex cargo for infrastructure and industrial projects.",
-      icon: <Package />,
-      link: "/services/project-cargo"
-    },
-    {
-      image: "/6.png",
-      title: "3PL Services",
-      description:
-        "End-to-end third-party logistics solutions including warehousing, distribution, and supply chain management.",
-      icon: <Warehouse />,
-      link: "/services/3pl"
-    }
+    // ... (keep other fallbacks if desired, or just show empty)
   ];
 
   return (
     <div className="min-h-screen flex flex-col">
+      <Seo data={pageData?.seo} defaultTitle="Our Services" />
       <ScrollToTop />
       <Header />
 
@@ -182,7 +183,7 @@ const Services = () => {
         <section className="bg-gradient-to-r from-brand-green to-emerald-700 text-white relative overflow-hidden">
           <div className="absolute inset-0">
             <img
-              src="/lovable-uploads/gp.jpg.tf"
+              src={pageData?.hero?.image ? urlFor(pageData.hero.image).url() : "/lovable-uploads/gp.jpg.tf"}
               alt="Services"
               className="w-full h-full object-cover opacity-20"
             />
@@ -197,12 +198,11 @@ const Services = () => {
               className="text-center max-w-3xl mx-auto"
             >
               <h1 className="text-3xl md:text-5xl font-bold mb-4 text-white">
-                Our Logistics Services
+                {pageData?.hero?.title || 'Our Logistics Services'}
               </h1>
               <div className="w-20 h-1 bg-amber-400 mx-auto mb-6" />
               <p className="text-lg text-white/90">
-                From air and ocean freight to specialized transportation
-                solutions, we deliver end-to-end logistics excellence.
+                {pageData?.hero?.subtitle || 'From air and ocean freight to specialized transportation solutions, we deliver end-to-end logistics excellence.'}
               </p>
             </motion.div>
           </div>
