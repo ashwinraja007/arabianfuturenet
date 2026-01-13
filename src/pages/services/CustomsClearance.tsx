@@ -2,7 +2,7 @@ import React from 'react';
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { motion } from 'framer-motion';
-import { FileCheck, ShieldCheck, Lightbulb, Globe } from "lucide-react";
+import { FileCheck, ShieldCheck, Lightbulb } from "lucide-react";
 import { Link } from 'react-router-dom';
 const CustomsClearance = () => {
   return <div className="min-h-screen flex flex-col">
@@ -47,7 +47,7 @@ const CustomsClearance = () => {
                 duration: 0.5,
                 delay: 0.2
               }}>
-                  <Link to="/contact" className="px-6 py-3 bg-amber-400 hover:bg-amber-400 text-brand-navy font-medium rounded-md shadow-md transition-all opacity-100\n">
+                  <Link to="/contact" className="px-6 py-3 bg-amber-400 hover:bg-amber-500 text-brand-navy font-medium rounded-md shadow-md transition-all opacity-100">
                     Get a Quote
                   </Link>
                 </motion.div>
