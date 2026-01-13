@@ -21,11 +21,11 @@ export const useGeoRedirect = () => {
           const timezoneRedirectTriggered = detectCountryByTimezone();
           
           if (!timezoneRedirectTriggered) {
-            console.log('User not detected as being from India');
+            // User not detected as being from India
           }
         }
-      } catch (error) {
-        console.error('Geo-redirection error:', error);
+      } catch {
+        // Ignore geo-redirection errors
       }
     };
 
