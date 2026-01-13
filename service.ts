@@ -38,6 +38,18 @@ export default defineType({
       type: 'blockContent',
     }),
     defineField({
+      name: 'features',
+      title: 'Features',
+      type: 'array',
+      of: [{ type: 'string' }],
+    }),
+    defineField({
+      name: 'globalHubs',
+      title: 'Global Hubs',
+      type: 'array',
+      of: [{ type: 'string' }],
+    }),
+    defineField({
       name: 'cta',
       title: 'CTA Section',
       type: 'object',
