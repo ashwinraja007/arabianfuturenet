@@ -5,6 +5,7 @@ import { Footer } from "@/components/layout/Footer";
 import { Loader2 } from "lucide-react";
 import Hero from "@/components/home/Hero";
 import { useGeoRedirect } from "@/hooks/useGeoRedirect";
+import { Seo } from '@/components/common/Seo';
 
 // Lazy load other components
 const AboutUs = lazy(() => import("@/components/home/AboutUs"));
@@ -24,6 +25,7 @@ const Index = () => {
 
   return (
     <div className="min-h-screen flex flex-col relative">
+      <Seo defaultTitle="Arabian Future Net - Global Logistics Solutions" />
       <Header />
       <main id="main" className="flex-grow pt-16">
         <Hero />

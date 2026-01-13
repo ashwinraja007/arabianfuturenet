@@ -5,10 +5,12 @@ import { motion } from 'framer-motion';
 import { Ship, Package, Box, Globe, FileCheck, Anchor, Container, MapPin, Timer, Gauge } from "lucide-react";
 import { Link } from 'react-router-dom';
 import { AspectRatio } from "@/components/ui/aspect-ratio";
+import { Seo } from '@/components/common/Seo';
 const LCLConsolidation = () => {
   const lclServices = ["Collecting smaller shipments from multiple clients", "Combining them into a single container at origin", "Managing customs clearance and documentation", "Ensuring secure and timely deconsolidation and final delivery", "Real-time tracking and shipment visibility", "Competitive pricing for cost-effective solutions"];
   const globalHubs = ["Singapore", "Malaysia", "Sri Lanka", "Dubai", "Mumbai (India)", "Chennai (India)"];
   return <div className="min-h-screen flex flex-col">
+      <Seo defaultTitle="LCL Consolidation Services" />
       <Header />
       
       <main className="flex-grow pt-16 md:pt-20">

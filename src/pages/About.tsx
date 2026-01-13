@@ -61,6 +61,15 @@ const About = () => {
               text: 'Our organizational structure is simple which makes the communication process very effective and much satisfactory for our clients. We are providing total logistics solutions to many customers. Our extensive network of carefully selected business partners and the committed work force have taken us far ahead, combining all the benefits of in-depth local knowledge with truly global expertise. Arabian Future Net  is part of world’s largest network 'World Cargo Alliance' (WCA) and are able to handle shipments to and  from any part of the world using our own offices & agents worldwide.'
             }
           ]
+        },
+        {
+          _type: 'block',
+          children: [
+            {
+              _type: 'span',
+              text: "Our organizational structure is simple which makes the communication process very effective and much satisfactory for our clients. We are providing total logistics solutions to many customers. Our extensive network of carefully selected business partners and the committed work force have taken us far ahead, combining all the benefits of in-depth local knowledge with truly global expertise. Arabian Future Net is part of world's largest network 'World Cargo Alliance' (WCA) and are able to handle shipments to and from any part of the world using our own offices & agents worldwide."
+            }
+          ]
         }
       ],
       image: null

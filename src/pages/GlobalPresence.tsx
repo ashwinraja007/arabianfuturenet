@@ -6,6 +6,7 @@ import ContactMapContainer from '@/components/MapContainer';
 import ContactSidebar from '@/components/Sidebar';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { motion } from 'framer-motion';
+import { Seo } from '@/components/common/Seo';
 
 
 const ScrollToTop = () => {
@@ -39,6 +40,7 @@ const GlobalPresence = () => {
   return (
     <div className="min-h-screen flex flex-col bg-gradient-to-b from-amber-50/30 to-white">
       <ScrollToTop />
+      <Seo defaultTitle="Global Presence" />
       <Header />
   
       <motion.div

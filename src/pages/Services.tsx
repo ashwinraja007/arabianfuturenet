@@ -16,6 +16,7 @@ import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { client } from '../../client';
 import { urlFor } from '../../image';
+import { Seo } from '@/components/common/Seo';
 
 // Scroll to Top on Route Change
 const ScrollToTop = () => {
@@ -226,6 +227,7 @@ const Services = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <ScrollToTop />
+      <Seo data={pageData?.seo} defaultTitle="Our Services" />
       <Header />
 
       <main className="flex-grow pt-16 md:pt-20">

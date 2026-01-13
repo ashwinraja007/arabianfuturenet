@@ -4,6 +4,7 @@ import { Footer } from "@/components/layout/Footer";
 import { motion } from "framer-motion";
 import { Phone, Mail, MapPin } from "lucide-react";
 import QuickEnquiry from "@/components/home/QuickEnquiry";
+import { Seo } from '@/components/common/Seo';
 
 const offices = [
   {
@@ -38,6 +39,7 @@ const offices = [
 const Contact = () => {
   return (
     <div className="min-h-screen flex flex-col bg-gray-50">
+      <Seo defaultTitle="Contact Us" />
       <Header />
 
       <main className="flex-grow">
