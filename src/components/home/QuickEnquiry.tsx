@@ -27,14 +27,13 @@ export const QuickEnquiry = () => {
     reset
   } = useForm<EnquiryForm>();
   
-  const onSubmit = async (data: EnquiryForm) => {
+  const onSubmit = async (_data: EnquiryForm) => {
     setIsSubmitting(true);
     try {
       await new Promise(resolve => setTimeout(resolve, 1500));
-      console.log(data);
       setSubmitStatus('success');
       reset();
-    } catch (error) {
+    } catch {
       setSubmitStatus('error');
     } finally {
       setIsSubmitting(false);
