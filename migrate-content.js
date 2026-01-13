@@ -6,7 +6,7 @@ import { dirname } from 'path'
 
 // --- Configuration ---
 // Ensure these environment variables are set or replace with actual values for the run
-const projectId = process.env.SANITY_STUDIO_PROJECT_ID || 'your_project_id'
+const projectId = process.env.SANITY_STUDIO_PROJECT_ID || 'yourprojectid'
 const dataset = process.env.SANITY_STUDIO_DATASET || 'production'
 const token = process.env.SANITY_API_TOKEN // Requires a token with write permissions
 
