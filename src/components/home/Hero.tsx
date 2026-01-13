@@ -1,10 +1,5 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Users, UserCircle, SearchCode, Ship, Calendar } from 'lucide-react';
-
-interface Slide {
-  title: string;
-  desc: string;
-}
 
 interface PortalLink {
   icon: JSX.Element;
@@ -12,14 +7,6 @@ interface PortalLink {
   url: string;
   external: boolean;
 }
-
-const slides: Slide[] = [
-  { title: 'Ocean Freight', desc: '' },
-  { title: 'Transportation', desc: '' },
-  { title: 'Warehousing', desc: '' },
-  { title: 'Customs Clearance', desc: '' },
-  { title: 'Project Cargo', desc: '' },
-];
 
 const portalLinks: PortalLink[] = [
   { icon: <Users className="w-5 h-5" />, title: 'Consolmate', url: 'https://consolmate.com/auth/login/8', external: true },
@@ -30,16 +17,6 @@ const portalLinks: PortalLink[] = [
 ];
 
 const Hero: React.FC = () => {
-  const [, setActive] = useState<number>(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setActive((prev) => (prev + 1) % slides.length);
-    }, 5000);
-
-    return () => clearInterval(interval);
-  }, []);
-
   return (
     <section className="relative min-h-screen overflow-hidden">
       {/* VIDEO BACKGROUND */}
