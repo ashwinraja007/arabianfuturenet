@@ -29,21 +29,11 @@ const AboutUs = () => {
               </h2>
 
               <p className="text-gray-600 mb-4 text-base text-justify">
-                Arabian Future Net Shipping Company is an international freight
-                forwarder and logistics provider with headquarters in Dammam
-                and branch offices in Jeddah and Riyadh. We offer premium
-                logistics services to businesses worldwide, including a wide
-                range of international and domestic transportation and
-                logistics services.
+Arabian Future Net Shipping Company is an international freight forwarder and logistics provider with head quarter in Dammam  & branch office in  Jeddah   and Riyadh .We offer premium logistics services to businesses worldwide, a wide range of international and domestic transportation and logistics services. Our personal service and expert knowledge of freight forwarding is unrivalled.
               </p>
 
               <p className="text-gray-600 mb-6 text-base text-justify">
-                We provide seamless integration of various transportation
-                modes such as sea freight, air freight, and road freight, as
-                well as diversified logistics services in warehousing and
-                material handling. Arabian Future Net is well equipped to
-                handle worldwide door-to-door delivery, customs clearance,
-                dangerous or perishable goods, break bulk, and project cargo.
+We provide seamless integration of various transportation modes such as sea freight, air freight and road freight, as well as diversified logistics services in Warehousing, Material Handling. Arabian Future Net  is well equipped to handle worldwide door-to-door delivery, custom clearance, dangerous or perishable goods, break bulk / project cargos etc.
               </p>
 
               <Link to="/about">
