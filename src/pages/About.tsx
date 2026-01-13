@@ -40,7 +40,7 @@ const About = () => {
           children: [
             {
               _type: 'span',
-              text: 'Arabian Future Net Shipping Company is an international freight forwarder and logistics provider with headquarters in Dammam and branch offices in Jeddah and Riyadh. We offer premium logistics services to businesses worldwide, including a wide range of international and domestic transportation and logistics services.'
+              text: 'Arabian Future Net Shipping Company is an international freight forwarder and logistics provider with head quarter in Dammam  & branch office in  Jeddah   and Riyadh .We offer premium logistics services to businesses worldwide, a wide range of international and domestic transportation and logistics services. Our personal service and expert knowledge of freight forwarding is unrivalled.'
             }
           ]
         },
@@ -49,7 +49,16 @@ const About = () => {
           children: [
             {
               _type: 'span',
-              text: 'We provide seamless integration of various transportation modes such as sea freight, air freight, and road freight, as well as diversified logistics services in warehousing and material handling. Arabian Future Net is well equipped to handle worldwide door-to-door delivery, customs clearance, dangerous or perishable goods, break bulk, and project cargo.'
+              text: 'We provide seamless integration of various transportation modes such as sea freight, air freight and road freight, as well as diversified logistics services in Warehousing, Material Handling. Arabian Future Net  is well equipped to handle worldwide door-to-door delivery, custom clearance, dangerous or perishable goods, break bulk / project cargos etc.'
+            }
+          ]
+        },
+                {
+          _type: 'block',
+          children: [
+            {
+              _type: 'span',
+              text: 'Our organizational structure is simple which makes the communication process very effective and much satisfactory for our clients. We are providing total logistics solutions to many customers. Our extensive network of carefully selected business partners and the committed work force have taken us far ahead, combining all the benefits of in-depth local knowledge with truly global expertise. Arabian Future Net  is part of world’s largest network 'World Cargo Alliance' (WCA) and are able to handle shipments to and  from any part of the world using our own offices & agents worldwide.'
             }
           ]
         }
