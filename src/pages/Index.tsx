@@ -1,5 +1,5 @@
 
-import { Suspense, lazy } from 'react';
+import { Suspense, lazy, useEffect } from 'react';
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Loader2 } from "lucide-react";
@@ -22,6 +22,16 @@ const LoadingComponent = () => (
 
 const Index = () => {
   useGeoRedirect();
+
+  useEffect(() => {
+    const link = document.querySelector("link[rel~='icon']");
+    if (!link) {
+      const newLink = document.createElement('link');
+      newLink.rel = 'icon';
+      newLink.href = '/favicon.ico';
+      document.head.appendChild(newLink);
+    }
+  }, []);
 
   return (
     <div className="min-h-screen flex flex-col relative">
