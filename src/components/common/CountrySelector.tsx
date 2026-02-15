@@ -30,13 +30,12 @@ const countries: CountryData[] = [
   { country: "CHINA", company: "Haixun", website: "https://www.haixun.co/", priority: 6, flag: "/cn.svg", slug: "china" },
   { country: "AUSTRALIA", company: "GGL", website: "https://www.gglaustralia.com/", priority: 7, flag: "/au.svg", slug: "australia" },
   { country: "INDIA", company: "OECL", website: "https://www.oecl.sg/india/home", priority: 8, flag: "/in.svg", slug: "india" },
-  { country: "BANGLADESH", company: "GC", website: "https://www.globalconsol.com/sri-lanka", priority: 9, flag: "/lk.svg", slug: "sri-lanka" },
-  { country: "SRI LANKA", company: "GC", website: "https://www.globalconsol.com/bangladesh", priority: 9, flag: "/bd.svg", slug: "bangladesh" },
-  { country: "PAKISTAN", company: "GC", website: "https://www.globalconsol.com", priority: 10, flag: "/pk.svg", slug: "pakistan" },
+  { country: "BANGLADESH", company: "GC", website: "https://www.globalconsol.com/bangladesh", priority: 9, flag: "/lk.svg", slug: "sri-lanka" },
+  { country: "SRI LANKA", company: "GC", website: "https://www.globalconsol.com/sri-lanka", priority: 9, flag: "/bd.svg", slug: "bangladesh" },
   { country: "UAE", company: "FNL", website: "https://https://www.futurenetlogistics.com/", priority: 13, flag: "/ae.svg", slug: "uae" },
   { country: "SAUDI ARABIA", company: "AMASS", website: "https://amassmiddleeast.com/", priority: 12, flag: "/sa.svg", slug: "saudi-arabia" },
   { country: "USA", company: "GGL", website: "https://gglusa.us/", priority: 14, flag: "/us.svg", slug: "usa" },
-  { country: "UK", company: "Moltech", website: "https://moltech.uk/", priority: 15, flag: "/gb.svg", slug: "uk" },
+  { country: "UK", company: "GGL", website: "https://www.ggl.sg/uk", priority: 15, flag: "/gb.svg", slug: "uk" },
 ];
 
 const CountrySelector = () => {
